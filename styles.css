@@ -18,7 +18,7 @@ nav ul {
 
 nav ul li {
   display: inline-block;
-  margin-right: 10px;
+  margin-right: 20px; /* Adjust the margin as per your preference */
 }
 
 nav ul li button {
@@ -27,18 +27,14 @@ nav ul li button {
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
-  padding: 12px 24px;
-  border-radius: 50px;
+  padding: 12px 20px; /* Adjust the padding as per your preference */
   font-size: 16px;
   font-weight: bold;
   text-transform: uppercase;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 nav ul li button:hover {
   transform: translateY(-2px);
-  background-color: #fff;
-  color: #333;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -52,6 +48,8 @@ nav .menu-icon {
 nav .menu {
   display: flex;
   flex-direction: column;
+  transform: translateY(-20px);
+  transition: transform 0.3s ease;
 }
 
 #menu-toggle {
@@ -59,7 +57,7 @@ nav .menu {
 }
 
 #menu-toggle:checked ~ .menu {
-  display: flex;
+  transform: translateY(0);
 }
 
 main {
@@ -76,14 +74,30 @@ main {
 @keyframes fade-in {
   from {
     opacity: 0;
+    transform: translateY(-10px);
   }
   to {
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
 .fade-in {
   animation: fade-in 1s ease-in-out;
+}
+
+/* Animation for menu opening */
+@keyframes slide-in {
+  from {
+    transform: translateY(-20px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.slide-in {
+  animation: slide-in 0.3s ease;
 }
 
 /* CSS for hamburger menu */
