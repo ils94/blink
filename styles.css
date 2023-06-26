@@ -7,7 +7,6 @@ body {
 }
 
 .container {
-  max-width: 1280px;
   margin: 0 auto;
   padding: 20px;
   display: flex;
@@ -35,15 +34,16 @@ body {
 /* Tab Styles */
 .tab-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 20px;
   width: 100%;
   box-sizing: border-box;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 0 10px;
 }
 
 .tab {
+  flex: 1;
   text-align: center;
   padding: 10px;
   box-sizing: border-box;
@@ -51,7 +51,7 @@ body {
 
 .tab button {
   display: block;
-  width: 385px; /* Set a fixed width for each tab on desktop */
+  width: 100%;
   padding: 20px;
   font-size: 18px;
   font-weight: bold;
@@ -77,13 +77,12 @@ body {
   background-color: white;
   border: 1px solid lightgray;
   padding: 20px;
-  width: 1220px; /* Set a fixed width */
-  height: 300px; /* Set a fixed height */
-  overflow-y: auto; /* Add scrollbars if the content exceeds the height */
+  width: 100%;
+  box-sizing: border-box;
+  overflow-y: auto;
   border-radius: 0 5px 5px 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   animation: fadeIn 0.5s ease;
-  box-sizing: border-box;
 }
 
 .tab-content {
@@ -153,48 +152,18 @@ body {
 }
 
 /* Media Queries */
-@media (max-width: 1280px) {
-  .container {
-    padding: 10px;
-  }
-  
-  .tab button {
-    width: 320px;
-  }
-  
-  .content-container {
-    width: 950px;
-  }
-}
-
-@media (max-width: 960px) {
-  .tab button {
-    width: 250px;
-  }
-  
-  .content-container {
-    width: 700px;
-  }
-}
-
 @media (max-width: 768px) {
   .tab button {
-    width: 100%;
+    font-size: 16px;
+    padding: 15px;
     margin: 5px 0;
   }
-  
+
   .content-container {
     width: 100%;
   }
   
   .header img {
     padding: 0;
-  }
-}
-
-@media (max-width: 480px) {
-  .tab button {
-    font-size: 14px;
-    padding: 10px;
   }
 }
