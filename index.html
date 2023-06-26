@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blink</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="logo.jpg" alt="Your Image">
+    </div>
+
+    <div class="tab-container">
+      <div class="tab">
+        <button id="tab1" onclick="toggleTab('tab1', 'content1')">Tab 1</button>
+      </div>
+      <div class="tab">
+        <button id="tab2" onclick="toggleTab('tab2', 'content2')">Tab 2</button>
+      </div>
+      <div class="tab">
+        <button id="tab3" onclick="toggleTab('tab3', 'content3')">Tab 3</button>
+      </div>
+    </div>
+
+    <div class="content-container">
+      <div id="content1" class="tab-content">
+        <h2>Content for Tab 1</h2>
+        <p>This is the content for Tab 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dapibus quam sit amet iaculis suscipit.</p>
+      </div>
+      <div id="content2" class="tab-content">
+        <h2>Content for Tab 2</h2>
+        <p>This is the content for Tab 2. Sed ultricies semper faucibus. Phasellus eleifend turpis vitae ex posuere, nec efficitur justo lacinia.</p>
+      </div>
+      <div id="content3" class="tab-content">
+        <h2>Content for Tab 3</h2>
+        <p>This is the content for Tab 3. Fusce rutrum felis elit, in volutpat enim ullamcorper eu. Nam rhoncus arcu et est tristique, et pharetra massa hendrerit.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

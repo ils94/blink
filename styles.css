@@ -1,0 +1,153 @@
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  overflow-y: scroll;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  min-height: 100vh;
+  justify-content: center;
+}
+
+/* Header Styles */
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header img {
+  max-width: 100%;
+  height: auto;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Tab Styles */
+.tab-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.tab {
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.tab button {
+  display: block;
+  width: 385px; /* Set a fixed width for each tab */
+  padding: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: lightgray;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 5px 5px 0 0;
+  margin: 0 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tab button:hover {
+  background-color: #e0e0e0;
+}
+
+.tab button.active {
+  background-color: white;
+}
+
+/* Content Styles */
+.content-container {
+  background-color: white;
+  border: 1px solid lightgray;
+  padding: 20px;
+  width: 1220px; /* Set a fixed width */
+  height: 300px; /* Set a fixed height */
+  overflow-y: auto; /* Add scrollbars if the content exceeds the height */
+  border-radius: 0 5px 5px 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease;
+  box-sizing: border-box;
+}
+
+.tab-content {
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.tab-content h2 {
+  margin-top: 0;
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.tab-content p {
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+  animation-delay: 0.2s;
+}
+
+/* Enlarged Content Styles */
+.enlarged-content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 20px;
+  animation: fadeIn 0.5s ease;
+}
+
+.enlarged-content-content {
+  max-width: 600px;
+  text-align: center;
+}
+
+.enlarged-content-content h2 {
+  margin-top: 0;
+}
+
+.enlarged-content-content p {
+  margin-bottom: 20px;
+}
+
+/* Added Styles */
+.container {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  box-sizing: border-box;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
