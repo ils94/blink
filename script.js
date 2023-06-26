@@ -1,45 +1,26 @@
-window.addEventListener("DOMContentLoaded", function () {
-  // Hide all tab contents except the first one
-  var tabContents = document.getElementsByClassName("tab-content");
-  for (var i = 1; i < tabContents.length; i++) {
-    tabContents[i].style.display = "none";
-  }
+document.addEventListener("DOMContentLoaded", function() {
+  showContent("content1");
 });
 
-function toggleTab(tabId, contentId) {
-  // Hide all tab contents
-  var tabContents = document.getElementsByClassName("tab-content");
-  for (var i = 0; i < tabContents.length; i++) {
-    tabContents[i].style.display = "none";
+function showContent(contentId) {
+  var contents = document.querySelectorAll("main > div");
+  for (var i = 0; i < contents.length; i++) {
+    contents[i].style.display = "none";
+    contents[i].classList.remove("fade-in");
   }
-
-  // Remove "active" class from all tabs
-  var tabs = document.getElementsByClassName("tab");
-  for (var i = 0; i < tabs.length; i++) {
-    tabs[i].querySelector("button").classList.remove("active");
-  }
-
-  // Show selected tab content
-  var selectedTabContent = document.getElementById(contentId);
-  selectedTabContent.style.display = "block";
-
-  // Add "active" class to the clicked tab
-  var clickedTab = document.getElementById(tabId).parentNode;
-  clickedTab.querySelector("button").classList.add("active");
-
-  // Animate tab content
-  animateTabContent(selectedTabContent);
+  var content = document.getElementById(contentId);
+  content.style.display = "block";
+  content.classList.add("fade-in");
 }
 
-function animateTabContent(tabContent) {
-  var title = tabContent.querySelector("h2");
-  var paragraphs = tabContent.getElementsByTagName("p");
-  var delay = 0;
+document.getElementById("button1").addEventListener("click", function() {
+  showContent("content1");
+});
 
-  title.style.animation = "fadeIn 0.5s ease forwards";
+document.getElementById("button2").addEventListener("click", function() {
+  showContent("content2");
+});
 
-  for (var i = 0; i < paragraphs.length; i++) {
-    paragraphs[i].style.animation = "fadeIn 0.5s ease " + delay + "s forwards";
-    delay += 0.2;
-  }
-}
+document.getElementById("button3").addEventListener("click", function() {
+  showContent("content3");
+});
