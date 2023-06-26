@@ -153,22 +153,42 @@ body {
 }
 
 /* Media Queries */
-@media (max-width: 768px) {
+@media (max-width: 1280px) {
   .container {
     padding: 10px;
   }
   
   .tab button {
-    font-size: 16px;
-    padding: 15px;
+    width: 320px;
+  }
+  
+  .content-container {
+    width: 950px;
+  }
+}
+
+@media (max-width: 960px) {
+  .tab button {
+    width: 250px;
+  }
+  
+  .content-container {
+    width: 700px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tab button {
     width: 100%;
-    box-sizing: border-box;
     margin: 5px 0;
   }
   
   .content-container {
-    height: auto;
-    max-height: 400px;
+    width: 100%;
+  }
+  
+  .header img {
+    padding: 0;
   }
 }
 
@@ -176,8 +196,5 @@ body {
   .tab button {
     font-size: 14px;
     padding: 10px;
-    width: 100%;
-    box-sizing: border-box;
-    margin: 5px 0;
   }
 }
