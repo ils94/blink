@@ -51,7 +51,7 @@ body {
 
 .tab button {
   display: block;
-  width: 385px; /* Set a fixed width for each tab */
+  width: 385px; /* Set a fixed width for each tab on desktop */
   padding: 20px;
   font-size: 18px;
   font-weight: bold;
@@ -149,5 +149,35 @@ body {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+  
+  .tab button {
+    font-size: 16px;
+    padding: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 5px 0;
+  }
+  
+  .content-container {
+    height: auto;
+    max-height: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tab button {
+    font-size: 14px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 5px 0;
   }
 }
