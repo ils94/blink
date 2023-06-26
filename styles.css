@@ -1,26 +1,104 @@
-document.addEventListener("DOMContentLoaded", function() {
-  showContent("content1");
-});
-
-function showContent(contentId) {
-  var contents = document.querySelectorAll("main > div");
-  for (var i = 0; i < contents.length; i++) {
-    contents[i].style.display = "none";
-    contents[i].classList.remove("fade-in");
-  }
-  var content = document.getElementById(contentId);
-  content.style.display = "block";
-  content.classList.add("fade-in");
+/* CSS for mobile responsiveness */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
 }
 
-document.getElementById("button1").addEventListener("click", function() {
-  showContent("content1");
-});
+header {
+  background-color: #333;
+  padding: 10px;
+}
 
-document.getElementById("button2").addEventListener("click", function() {
-  showContent("content2");
-});
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
 
-document.getElementById("button3").addEventListener("click", function() {
-  showContent("content3");
-});
+nav ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+nav ul li button {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+nav ul li button:hover {
+  transform: translateY(-2px);
+  background-color: #fff;
+  color: #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+nav .menu-icon {
+  display: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+nav .menu {
+  display: flex;
+  flex-direction: column;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+#menu-toggle:checked ~ .menu {
+  display: flex;
+}
+
+main {
+  padding: 20px;
+}
+
+#content1,
+#content2,
+#content3 {
+  display: none;
+}
+
+/* Animation for content appearance */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fade-in 1s ease-in-out;
+}
+
+/* CSS for hamburger menu */
+@media screen and (max-width: 768px), (min-width: 769px) {
+  nav .menu {
+    display: none;
+  }
+
+  nav .menu-icon {
+    display: block;
+  }
+
+  #menu-toggle:checked ~ .menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
