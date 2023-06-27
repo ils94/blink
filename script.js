@@ -11,6 +11,10 @@ function showContent(contentId) {
   var content = document.getElementById(contentId);
   content.style.display = "block";
   content.classList.add("fade-in");
+
+  // Close the menu
+  var menuToggle = document.getElementById("menu-toggle");
+  menuToggle.checked = false;
 }
 
 document.getElementById("button1").addEventListener("click", function() {
