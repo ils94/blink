@@ -5,6 +5,20 @@ body {
   font-family: Arial, sans-serif;
 }
 
+.top-bar {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}
+
+.top-bar-content {
+  font-weight: bold;
+  font-size: 24px; /* Adjust the font size as per your preference */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
 header {
   background-color: #333;
   padding: 10px;
@@ -40,6 +54,9 @@ nav ul li button:hover {
 
 nav .menu-icon {
   display: none;
+}
+
+nav .menu-icon i {
   color: #fff;
   font-size: 24px;
   cursor: pointer;
